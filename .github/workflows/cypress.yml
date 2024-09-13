@@ -19,10 +19,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '10.x'
+          node-version: '20.x'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm --version
+          node --version
 
       - name: Run Cypress tests
-        run: npx cypress run
+        run: |
+          npx cypress run
+          npx cypress --version
