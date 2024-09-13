@@ -1,6 +1,6 @@
 describe('User Login/Logout', () => {
     it('should handle valid and invalid login attempts, and allow logout', () => {
-      cy.visit('https://automationexercise.com/login'); // Replace with the login URL
+      cy.visit('https://automationexercise.com/login');
 
       
       // Test invalid login
