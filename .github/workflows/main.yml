@@ -1,16 +1,10 @@
 name: Cypress Tests
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push]
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -19,10 +13,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '10.x'
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npm run cypress:run
